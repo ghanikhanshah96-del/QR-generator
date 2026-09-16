@@ -1,0 +1,95 @@
+<section id="qr-editor" class="space-y-5" aria-label="Design controls">
+  <div>
+    <h3 class="text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">Quick styles</h3>
+    <div class="mt-3 flex flex-wrap gap-2" data-presets></div>
+  </div>
+
+  <details class="group rounded-2xl border border-ink-100 bg-ink-50/50 open:bg-white" open>
+    <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink-900 marker:content-none [&::-webkit-details-marker]:hidden">
+      <span class="flex items-center justify-between gap-3">
+        Colors &amp; pattern
+        <span class="text-ink-400 transition group-open:rotate-45" aria-hidden="true">+</span>
+      </span>
+    </summary>
+    <div class="space-y-5 border-t border-ink-100 px-4 py-4">
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-500">Pattern</h4>
+        <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3" data-dots-options></div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-500">Corner eyes</h4>
+          <div class="mt-3 grid grid-cols-1 gap-2" data-corner-square-options></div>
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-500">Eye centers</h4>
+          <div class="mt-3 grid grid-cols-1 gap-2" data-corner-dot-options></div>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label class="field-label" for="design-foreground">Foreground</label>
+          <input id="design-foreground" class="field-input h-12 p-1" type="color" value="#111827" />
+        </div>
+        <div>
+          <label class="field-label" for="design-background">Background</label>
+          <input id="design-background" class="field-input h-12 p-1" type="color" value="#ffffff" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <label class="flex items-center gap-2 text-sm text-ink-800 min-h-[44px]">
+          <input id="design-transparent" type="checkbox" class="size-4 rounded border-ink-300 text-brand-700" />
+          Transparent background
+        </label>
+        <label class="flex items-center gap-2 text-sm text-ink-800 min-h-[44px]">
+          <input id="design-gradient" type="checkbox" class="size-4 rounded border-ink-300 text-brand-700" />
+          Gradient foreground
+        </label>
+        <div>
+          <label class="field-label" for="design-gradient-color">Gradient end color</label>
+          <input id="design-gradient-color" class="field-input h-12 p-1" type="color" value="#1fa392" />
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="group rounded-2xl border border-ink-100 bg-ink-50/50">
+    <summary class="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink-900 marker:content-none [&::-webkit-details-marker]:hidden">
+      <span class="flex items-center justify-between gap-3">
+        Size, logo &amp; error correction
+        <span class="text-ink-400 transition group-open:rotate-45" aria-hidden="true">+</span>
+      </span>
+    </summary>
+    <div class="space-y-5 border-t border-ink-100 px-4 py-4">
+      <div>
+        <div class="flex items-center justify-between gap-3">
+          <label class="field-label mb-0" for="design-size">Export size</label>
+          <span id="design-size-value" class="text-xs font-medium text-ink-500">512px</span>
+        </div>
+        <input id="design-size" type="range" min="128" max="2048" step="32" value="512" class="mt-2 w-full accent-brand-600" />
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-500">Error correction</h4>
+        <div class="mt-3 grid grid-cols-2 gap-2" data-ecc-options></div>
+        <p class="field-hint">Use H when adding a logo or printing small.</p>
+      </div>
+      <div class="space-y-3 rounded-2xl border border-ink-100 bg-white p-4">
+        <h4 class="text-sm font-semibold text-ink-900">Logo</h4>
+        <input id="design-logo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" class="block w-full text-sm text-ink-700 file:mr-3 file:rounded-xl file:border-0 file:bg-ink-950 file:px-3 file:py-2 file:text-sm file:font-semibold file:text-white" />
+        <p id="design-logo-status" class="text-xs text-ink-500">No logo uploaded</p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div>
+            <label class="field-label" for="design-logo-size">Logo size (%)</label>
+            <input id="design-logo-size" type="range" min="12" max="28" value="22" class="w-full accent-brand-600" />
+            <p class="field-hint">Kept small so phones can still read the code.</p>
+          </div>
+          <div>
+            <label class="field-label" for="design-logo-margin">Logo margin</label>
+            <input id="design-logo-margin" type="range" min="0" max="16" value="8" class="w-full accent-brand-600" />
+          </div>
+        </div>
+        <button type="button" id="design-remove-logo" class="btn-secondary text-xs" hidden>Remove logo</button>
+      </div>
+    </div>
+  </details>
+</section>

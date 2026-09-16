@@ -1,0 +1,14 @@
+[
+  { "id": "url", "label": "URL", "path": "/url-qr-code/" },
+  { "id": "text", "label": "Text", "path": "/text-qr-code/" },
+  { "id": "wifi", "label": "Wi-Fi", "path": "/wifi-qr-code/" },
+  { "id": "whatsapp", "label": "WhatsApp", "path": "/whatsapp-qr-code/" },
+  { "id": "google-review", "label": "Google Review", "path": "/google-review-qr-code/" },
+  { "id": "vcard", "label": "vCard", "path": "/vcard-qr-code/" },
+  { "id": "email", "label": "Email", "path": "/email-qr-code/" },
+  { "id": "sms", "label": "SMS", "path": "/sms-qr-code/" },
+  { "id": "phone", "label": "Phone", "path": "/phone-qr-code/" },
+  { "id": "location", "label": "Location", "path": "/location-qr-code/" },
+  { "id": "image", "label": "Image", "path": "/image-qr-code/" },
+  { "id": "video", "label": "Video", "path": "/video-qr-code/" }
+]

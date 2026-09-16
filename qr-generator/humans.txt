@@ -1,0 +1,5 @@
+# Humanstxt.org — EverQR team notes
+Team: EverQR
+Site: https://everqr.app
+Standards: HTML5, ES Modules, Tailwind CSS
+Software: Vanilla JS, qr-code-styling (vendored)

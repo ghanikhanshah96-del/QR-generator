@@ -1,0 +1,1 @@
+@media print { header, footer, #qr-editor, .btn { display:none !important; } .qr-preview-frame { border:0; } }

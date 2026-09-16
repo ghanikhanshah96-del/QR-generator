@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security | EverQR</title>
+  <meta name="description" content="Security practices for the EverQR client-side generator." />
+  <link rel="canonical" href="https://everqr.app/security.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EverQR" />
+  <meta property="og:title" content="Security | EverQR" />
+  <meta property="og:description" content="Security practices for the EverQR client-side generator." />
+  <meta property="og:url" content="https://everqr.app/security.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Security | EverQR" />
+  <meta name="twitter:description" content="Security practices for the EverQR client-side generator." />
+  <link rel="icon" href="./assets/icons/favicon-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/output.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Security | EverQR","description":"Security practices for the EverQR client-side generator.","url":"https://everqr.app/security.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="sticky top-0 z-40 border-b border-ink-200/50 bg-[#f7f8fa]/80 backdrop-blur-xl">
+  <div class="site-container grid h-[4.25rem] grid-cols-[1fr_auto] items-center gap-3 md:grid-cols-[1fr_auto_1fr]">
+    <a href="./" class="flex items-center gap-2.5" aria-label="EverQR home">
+  <span class="inline-flex size-9 items-center justify-center rounded-2xl bg-ink-950 text-brand-300 shadow-soft" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 2h2v2h-2v-2zm4-2h2v6h-6v-2h4v-4zM14 14h2v2h-2v-2z" fill="currentColor"/></svg>
+  </span>
+  <span class="font-display text-xl font-semibold tracking-tight text-ink-950">EverQR</span>
+</a>
+
+
+    <nav class="hidden items-center justify-center gap-1 md:flex" aria-label="Primary">
+      <a class="nav-link" data-nav href="./">Create</a>
+
+      <div class="relative" data-dropdown>
+        <button
+          type="button"
+          class="nav-link inline-flex items-center gap-1.5"
+          data-dropdown-trigger
+          data-nav-types
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="nav-qr-types-menu"
+          id="nav-qr-types-button"
+        >
+          QR types
+          <svg class="size-3.5 opacity-70" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div
+          id="nav-qr-types-menu"
+          class="nav-dropdown-menu"
+          data-dropdown-menu
+          role="menu"
+          aria-labelledby="nav-qr-types-button"
+          hidden
+        >
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./url-qr-code/">URL</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./text-qr-code/">Text</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./wifi-qr-code/">Wi-Fi</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./whatsapp-qr-code/">WhatsApp</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./google-review-qr-code/">Google Review</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./vcard-qr-code/">vCard</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./email-qr-code/">Email</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./sms-qr-code/">SMS</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./phone-qr-code/">Phone</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./location-qr-code/">Location</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./image-qr-code/">Image</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="./video-qr-code/">Video</a>
+        </div>
+      </div>
+
+      <a class="nav-link" data-nav href="./guides/">Guides</a>
+      <a class="nav-link" data-nav href="./saved-designs/">Saved</a>
+    </nav>
+
+    <div class="flex items-center justify-end gap-2">
+      <a href="./#generator-app" class="btn-primary hidden sm:inline-flex">Start free</a>
+      <button type="button" id="mobile-menu-button" class="btn-ghost md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="border-t border-ink-200/60 bg-white/95 md:hidden" hidden>
+  <nav class="site-container flex flex-col gap-1 py-4" aria-label="Mobile">
+    <a class="nav-link" data-nav href="./">Create</a>
+
+    <p class="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-400">QR types</p>
+    <a class="nav-link" data-nav data-nav-type href="./url-qr-code/">URL</a>
+    <a class="nav-link" data-nav data-nav-type href="./text-qr-code/">Text</a>
+    <a class="nav-link" data-nav data-nav-type href="./wifi-qr-code/">Wi-Fi</a>
+    <a class="nav-link" data-nav data-nav-type href="./whatsapp-qr-code/">WhatsApp</a>
+    <a class="nav-link" data-nav data-nav-type href="./google-review-qr-code/">Google Review</a>
+    <a class="nav-link" data-nav data-nav-type href="./vcard-qr-code/">vCard</a>
+    <a class="nav-link" data-nav data-nav-type href="./email-qr-code/">Email</a>
+    <a class="nav-link" data-nav data-nav-type href="./sms-qr-code/">SMS</a>
+    <a class="nav-link" data-nav data-nav-type href="./phone-qr-code/">Phone</a>
+    <a class="nav-link" data-nav data-nav-type href="./location-qr-code/">Location</a>
+    <a class="nav-link" data-nav data-nav-type href="./image-qr-code/">Image</a>
+    <a class="nav-link" data-nav data-nav-type href="./video-qr-code/">Video</a>
+
+    <p class="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-400">More</p>
+    <a class="nav-link" data-nav href="./guides/">Guides</a>
+    <a class="nav-link" data-nav href="./saved-designs/">Saved designs</a>
+    <a class="nav-link" href="./privacy-policy.html">Privacy</a>
+  </nav>
+</div>
+
+</header>
+
+
+  <main class="site-container py-10 sm:py-14">
+    <article class="mx-auto max-w-3xl">
+      <h1 class="font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">Security</h1>
+      <div class="prose-ever mt-6 space-y-4 text-ink-700 leading-relaxed"><p>We sanitize user-controlled text before HTML insertion, validate URLs and uploads, keep dependencies minimal, and avoid executing imported project JSON as code.</p></div>
+    </article>
+  </main>
+  <footer class="mt-24 border-t border-ink-200/70 bg-ink-950 text-ink-200">
+  <div class="site-container grid gap-10 py-14 md:grid-cols-4">
+    <div class="md:col-span-1 space-y-4">
+      <p class="font-display text-2xl font-semibold text-white">EverQR</p>
+      <p class="text-sm leading-relaxed text-ink-300">Free, permanent, private, unlimited static QR codes. No signup. No watermark. Generated in your browser.</p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-white">Tools</p>
+      <ul class="mt-4 space-y-2 text-sm text-ink-300">
+        <li><a class="hover:text-brand-300" href="./url-qr-code/">URL QR</a></li>
+        <li><a class="hover:text-brand-300" href="./wifi-qr-code/">Wi-Fi QR</a></li>
+        <li><a class="hover:text-brand-300" href="./vcard-qr-code/">vCard QR</a></li>
+        <li><a class="hover:text-brand-300" href="./whatsapp-qr-code/">WhatsApp QR</a></li>
+        <li><a class="hover:text-brand-300" href="./google-review-qr-code/">Google Review QR</a></li>
+        <li><a class="hover:text-brand-300" href="./image-qr-code/">Image QR</a></li>
+        <li><a class="hover:text-brand-300" href="./video-qr-code/">Video QR</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-white">Learn</p>
+      <ul class="mt-4 space-y-2 text-sm text-ink-300">
+        <li><a class="hover:text-brand-300" href="./guides/what-is-a-qr-code/">What is a QR code?</a></li>
+        <li><a class="hover:text-brand-300" href="./guides/static-vs-dynamic-qr-codes/">Static vs dynamic</a></li>
+        <li><a class="hover:text-brand-300" href="./guides/do-qr-codes-expire/">Do QR codes expire?</a></li>
+        <li><a class="hover:text-brand-300" href="./guides/qr-code-security/">QR security</a></li>
+        <li><a class="hover:text-brand-300" href="./faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-white">Company</p>
+      <ul class="mt-4 space-y-2 text-sm text-ink-300">
+        <li><a class="hover:text-brand-300" href="./about.html">About</a></li>
+        <li><a class="hover:text-brand-300" href="./privacy-policy.html">Privacy</a></li>
+        <li><a class="hover:text-brand-300" href="./terms.html">Terms</a></li>
+        <li><a class="hover:text-brand-300" href="./accessibility.html">Accessibility</a></li>
+        <li><a class="hover:text-brand-300" href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="site-container flex flex-col gap-2 py-6 text-xs text-ink-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year></span> EverQR. Static QR codes do not expire and do not depend on our servers.</p>
+      <p class="text-brand-300">No signup · No watermark · Unlimited</p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+</script>
+
+  <script type="module" src="./assets/js/init.js"></script>
+</body>
+</html>

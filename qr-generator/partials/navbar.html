@@ -1,0 +1,59 @@
+<header class="sticky top-0 z-40 border-b border-ink-200/50 bg-[#f7f8fa]/80 backdrop-blur-xl">
+  <div class="site-container grid h-[4.25rem] grid-cols-[1fr_auto] items-center gap-3 md:grid-cols-[1fr_auto_1fr]">
+    <!-- include:brand-lockup.html -->
+
+    <nav class="hidden items-center justify-center gap-1 md:flex" aria-label="Primary">
+      <a class="nav-link" data-nav href="{{BASE}}/">Create</a>
+
+      <div class="relative" data-dropdown>
+        <button
+          type="button"
+          class="nav-link inline-flex items-center gap-1.5"
+          data-dropdown-trigger
+          data-nav-types
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="nav-qr-types-menu"
+          id="nav-qr-types-button"
+        >
+          QR types
+          <svg class="size-3.5 opacity-70" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div
+          id="nav-qr-types-menu"
+          class="nav-dropdown-menu"
+          data-dropdown-menu
+          role="menu"
+          aria-labelledby="nav-qr-types-button"
+          hidden
+        >
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/url-qr-code/">URL</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/text-qr-code/">Text</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/wifi-qr-code/">Wi-Fi</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/whatsapp-qr-code/">WhatsApp</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/google-review-qr-code/">Google Review</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/vcard-qr-code/">vCard</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/email-qr-code/">Email</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/sms-qr-code/">SMS</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/phone-qr-code/">Phone</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/location-qr-code/">Location</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/image-qr-code/">Image</a>
+          <a class="nav-dropdown-item" role="menuitem" data-nav data-nav-type href="{{BASE}}/video-qr-code/">Video</a>
+        </div>
+      </div>
+
+      <a class="nav-link" data-nav href="{{BASE}}/guides/">Guides</a>
+      <a class="nav-link" data-nav href="{{BASE}}/saved-designs/">Saved</a>
+    </nav>
+
+    <div class="flex items-center justify-end gap-2">
+      <a href="{{BASE}}/#generator-app" class="btn-primary hidden sm:inline-flex">Start free</a>
+      <button type="button" id="mobile-menu-button" class="btn-ghost md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- include:mobile-menu.html -->
+</header>
