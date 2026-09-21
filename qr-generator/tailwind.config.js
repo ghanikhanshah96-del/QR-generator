@@ -1,11 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    './*.html',
-    './*/*.html',
-    './*/*/*.html',
-    './partials/**/*.html',
-    './assets/js/**/*.js',
+    './app/**/*.{js,jsx,ts,tsx,mdx}',
+    './components/**/*.{js,jsx,ts,tsx,mdx}',
+    './lib/**/*.{js,jsx}',
+    './content/**/*.{js,jsx}',
   ],
   theme: {
     extend: {
@@ -43,8 +42,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Fraunces"', 'Georgia', 'ui-serif', 'serif'],
+        sans: ['var(--font-plus-jakarta)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'ui-serif', 'serif'],
       },
       boxShadow: {
         soft: '0 1px 2px rgb(11 16 32 / 0.04), 0 10px 28px rgb(11 16 32 / 0.06)',

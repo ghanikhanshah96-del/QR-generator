@@ -4,34 +4,29 @@ Free, permanent, private, unlimited static QR code generator — **no signup, no
 
 ## Stack
 
-- HTML5 static pages
-- Tailwind CSS (compiled)
-- Vanilla JavaScript (ES modules)
-- Client-side QR generation via vendored `qr-code-styling`
+- [Next.js](https://nextjs.org/) (App Router, static export)
+- Tailwind CSS
+- Client-side QR generation via `qr-code-styling`
 - LocalStorage + IndexedDB for preferences and saved designs
 
-No React/Vue/Angular, no backend framework, no accounts, no server-side QR processing.
+No accounts, no server-side QR processing. Generation stays in the browser.
 
 ## Quick start
 
 ```bash
 npm install
-npm run build
-npx serve .
+npm run dev
 ```
 
-
-Open the local URL and use the homepage generator.
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
 | Command | Purpose |
 | --- | --- |
-| `npm run build` | Generate pages, compile Tailwind, sitemap, robots |
-| `npm run build:css` | Tailwind only |
-| `npm run build:pages` | Regenerate HTML from partials/templates |
-| `npm test` | Unit tests for payloads and validation |
-| `npm run dev:css` | Watch Tailwind |
+| `npm run dev` | Next.js development server |
+| `npm run build` | Static export to `out/` |
+| `npm start` | Serve the production build (Node) |
 
 ## Architecture
 
@@ -39,7 +34,7 @@ Open the local URL and use the homepage generator.
 Generator form → payload formatter → validator → QR engine → live renderer → export
 ```
 
-Individual generators under `assets/js/generators/` only build payloads. Rendering and export stay in `assets/js/core/`.
+Generators under `lib/generators/` only build payloads. Rendering and export stay in `lib/core/`. The UI shell lives in `app/` and `components/`; `components/GeneratorApp.jsx` boots the client generator.
 
 ## Privacy
 
@@ -49,4 +44,4 @@ Static QR content is processed in the browser. EverQR does not need your Wi‑Fi
 
 ## License
 
-MIT — see `LICENSE`. Vendor licenses are under `assets/vendor/licenses/`.
+MIT — see `LICENSE`.

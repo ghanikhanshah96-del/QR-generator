@@ -1,4 +1,6 @@
 node_modules/
+.next/
+out/
 dist/
 .DS_Store
 *.log
@@ -8,3 +10,5 @@ dist/
 .idea/
 coverage/
 assets/css/output.css.map
+_archive/
+_legacy_backup/

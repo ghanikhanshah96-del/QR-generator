@@ -136,7 +136,7 @@ const TOOLS = [
   {
     id: 'url',
     dir: 'url-qr-code',
-    title: 'Free URL QR Code Generator — No Signup, No Watermark | EverQR',
+    title: 'Free URL QR Code Generator | EverQR',
     h1: 'URL QR Code Generator',
     description:
       'Create a free static URL QR code in your browser. No signup, no expiration, no watermark. Private and unlimited.',
@@ -190,12 +190,12 @@ const TOOLS = [
   {
     id: 'wifi',
     dir: 'wifi-qr-code',
-    title: 'Free Wi‑Fi QR Code Generator — Guest Network Sharing | EverQR',
-    h1: 'Wi‑Fi QR Code Generator',
+    title: 'Free WiFi QR Code Generator | EverQR',
+    h1: 'WiFi QR Code Generator',
     description:
-      'Create a Wi‑Fi QR code so guests can join your network by scanning. Free, private, no signup, no watermark.',
+      'Create a free WiFi QR code so guests can join your network by scanning. Private, no signup, no watermark.',
     intro:
-      'Share network access without spelling passwords aloud. The Wi‑Fi payload is encoded statically in the QR and never uploaded to us for generation.',
+      'Share network access without spelling passwords aloud. The WiFi payload is encoded statically in the QR and never uploaded to us for generation.',
     instructions: [
       'Enter SSID, security type, and password.',
       'Optionally mark the network as hidden.',
@@ -320,10 +320,10 @@ const TOOLS = [
   },
   {
     id: 'phone',
-    dir: 'phone-qr-code',
-    title: 'Free Phone Call QR Code Generator | EverQR',
-    h1: 'Phone QR Code Generator',
-    description: 'Create a click-to-call QR code. Free, private, unlimited, no signup.',
+    dir: 'phone-number-qr-code',
+    title: 'Free Phone Number QR Code Generator | EverQR',
+    h1: 'Phone Number QR Code Generator',
+    description: 'Create a free phone number QR code for click-to-call. Private, unlimited, no signup.',
     intro: 'Encode a telephone number so scanning starts a call on supported devices.',
     instructions: [
       'Enter a phone number with country code.',
@@ -342,29 +342,29 @@ const TOOLS = [
     dir: 'location-qr-code',
     title: 'Free Location QR Code Generator | EverQR',
     h1: 'Location QR Code Generator',
-    description: 'Create a geo QR code for map coordinates. Free, static, private, no watermark.',
-    intro: 'Share a precise map pin using latitude and longitude encoded directly in the QR.',
+    description: 'Create a free location QR code generator pin for Google Maps. Static, private, no watermark.',
+    intro: 'Share a precise map pin. Enter latitude and longitude — scanning opens that place in Google Maps.',
     instructions: [
-      'Enter latitude and longitude.',
+      'Enter latitude and longitude (separate fields — not both in one box).',
       'Optionally add a label.',
-      'Customize and download.',
+      'Customize and download — scan opens Google Maps.',
     ],
     faqs: [
       {
-        q: 'What format is used?',
-        a: 'We encode a standard geo: URI so many map apps can open the coordinates.',
+        q: 'What happens when someone scans?',
+        a: 'The QR encodes a Google Maps link for your coordinates, so phones open Google Maps at that pin.',
       },
     ],
   },
   {
     id: 'image',
-    dir: 'image-qr-code',
-    title: 'Free Image QR Code Generator | EverQR',
-    h1: 'Image QR Code Generator',
+    dir: 'image-to-qr-code',
+    title: 'Free Image to QR Code Generator | EverQR',
+    h1: 'Image to QR Code Generator',
     description:
-      'Upload an image or paste a public URL to create a free image QR code. No signup, no watermark. Works like QR.io — file becomes a link in the QR.',
+      'Convert an image to QR code for free — upload or paste a URL. No signup, no watermark.',
     intro:
-      'Upload your photo (we create a temporary public link via a third-party host) or paste a lasting image URL. EverQR encodes that https link in the QR — not the image bytes.',
+      'Upload your photo (temporary public link) or paste a lasting image URL. EverQR encodes that https link in the QR — not the image bytes.',
     instructions: [
       'Upload an image (PNG, JPG, WebP, GIF, SVG) or paste a public https URL.',
       'We host uploads briefly on tmpfiles.org so scanners get a real link (EverQR has no media server).',
@@ -388,11 +388,11 @@ const TOOLS = [
   },
   {
     id: 'video',
-    dir: 'video-qr-code',
-    title: 'Free Video QR Code Generator | EverQR',
-    h1: 'Video QR Code Generator',
+    dir: 'video-to-qr-code',
+    title: 'Free Video to QR Code Generator | EverQR',
+    h1: 'Video to QR Code Generator',
     description:
-      'Upload a video or paste YouTube/Vimeo/Drive links to create a free video QR code. No signup, no watermark.',
+      'Convert a video to QR code for free — upload or paste YouTube/Vimeo/Drive. No signup, no watermark.',
     intro:
       'Upload a short video for a temporary public link, or paste YouTube, Vimeo, or Drive. The QR opens that link — video files are too large to embed inside a QR.',
     instructions: [
@@ -417,6 +417,36 @@ const TOOLS = [
       {
         q: 'Will the QR stop working if I delete the video?',
         a: 'The QR itself does not expire on our side, but it still needs a valid destination URL to remain useful.',
+      },
+    ],
+  },
+  {
+    id: 'file',
+    dir: 'file-qr-code',
+    title: 'Free File QR Code Generator — PDF, DOC, TXT | EverQR',
+    h1: 'File QR Code Generator',
+    description:
+      'Upload a PDF, DOC, TXT, or other document and create a free file QR code. No signup, no watermark.',
+    intro:
+      'Upload PDF, Word, text, and similar files (or paste a lasting link). The QR opens the public download link — files are too large to embed inside a QR.',
+    instructions: [
+      'Upload PDF, DOC, DOCX, TXT, CSV, RTF, XLS, PPT (or paste a public https URL).',
+      'Confirm the public link appears in the form.',
+      'Customize colors and logo.',
+      'Download PNG, SVG, or JPG — no watermark.',
+    ],
+    faqs: [
+      {
+        q: 'Which file types are supported?',
+        a: 'PDF, DOC, DOCX, TXT, CSV, RTF, XLS/XLSX, PPT/PPTX, ODT, JSON, and XML — up to 25 MB per upload.',
+      },
+      {
+        q: 'Can the PDF live inside the QR?',
+        a: 'No. QR capacity is only a few KB. The QR encodes a public URL that opens or downloads the file.',
+      },
+      {
+        q: 'Does an uploaded file QR expire?',
+        a: 'The QR image itself does not expire. Temporary upload links last about 48 hours. For print, paste a permanent Drive or website URL.',
       },
     ],
   },

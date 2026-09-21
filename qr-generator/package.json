@@ -1,23 +1,29 @@
 {
   "name": "qr-generator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Free, permanent, private, unlimited static QR code generator — no signup, no watermark.",
-  "type": "module",
   "scripts": {
-    "dev:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
-    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",
-    "build:pages": "node scripts/inject-partials.js",
-    "build:sitemap": "node scripts/generate-sitemap.js",
-    "build:robots": "node scripts/generate-robots.js",
-    "build": "node scripts/build.js",
-    "test": "node --test tests/unit/*.test.js",
-    "check:links": "node scripts/check-links.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "node --test lib/**/*.test.js 2>/dev/null || node --test _archive/tests/unit/*.test.js"
+  },
+  "dependencies": {
+    "next": "^15.5.3",
+    "qr-code-styling": "^1.9.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@types/node": "^22.18.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=18"

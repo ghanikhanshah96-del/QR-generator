@@ -1,0 +1,1 @@
+MIT License - see upstream qr-code-styling project
